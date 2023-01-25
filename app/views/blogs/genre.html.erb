@@ -1,0 +1,26 @@
+<div class='blog-contents'>
+  <span class='new-article'><%= @blog.genre.name %></span>
+  <% if @blog.blank? %>
+    投稿はありません。
+  <% else %>
+    <div class='blog-lists' >
+      <div class='article-list'>
+        <% @blogs.each do |blog| %>
+          <div class='list'>
+            <%= link_to blog_path(blog.id), class: 'blog-title-img' do %>
+              <div>
+                <%= image_tag blog.image.variant(resize: '120x120') %>
+              </div>
+              <div class='blog-title'>
+                <%= blog.title %>
+                <div class='blog-description'><%= blog.description %></div>
+              </div>
+
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <%= render "site_right" %>
+    </div>
+  <% end %>
+</div>

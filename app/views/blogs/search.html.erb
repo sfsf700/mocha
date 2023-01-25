@@ -1,0 +1,25 @@
+<div class="blog-contents">
+  <span class='new-article'>Search Results</span>
+  <div class='blog-lists' >
+    <div class='article-list'>
+      <% @blogs.each do |blog| %>
+        <div class='list'>
+          <%= link_to blog_path(blog.id), class: 'blog-title-img', method: :get do %>
+            <div>
+              <%= image_tag blog.image.variant(resize: '120x120') if blog.image.attached? %>
+            </div>
+            <div class='blog-title'>
+              <%= blog.title %>
+              <div class='blog-description'><%= blog.description %></div>
+            </div>
+          <% end %>
+          <% if user_signed_in? && current_user.admin? %>
+            <%= link_to 'EDIT', edit_admin_blog_path(blog.id), class: 'admin-only edit', data: {"turbolinks" => false}, method: :get %>
+            <%= link_to 'DELETE', admin_blog_path(blog.id), class: 'admin-only delete', data: { confirm: 'Is it okay if I delete this article?' }, method: :delete %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%= render 'site_right'%>
+  </div>
+</div>

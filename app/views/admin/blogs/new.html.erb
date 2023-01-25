@@ -1,0 +1,25 @@
+<div class="new-post-page">
+  <p class="new-post-page-title">New Post Screen</p>
+  <%= form_with url: admin_blogs_path, class: 'admin-form', id: 'img-select', local: true do |f| %>
+    <div class="form-contents">
+      <%= f.text_field :title, placeholder: 'Title', id: "title", required: true %>
+      <%= f.text_field :description, placeholder: 'Description', id: "description", required: true %>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class: "genre_select"}) %>
+      <div class='img-preview' id='img-preview'></div>
+      <label class="select-file">Image
+      <%= f.file_field :image, class: 'hidden', id: "image", required: true %>
+      </label>
+      <%= f.submit "SEND", class: "send-submit" %>
+    </div>
+    
+    <div class="code-block" >
+      <div class="create-new-text">
+      <%= f.text_area :text, placeholder: "Text", class: "text", id: "user_answer_code", required: true %>
+      </div>
+      <div class="create-new-text">
+        <div class="preview"></div>
+        <div id="code_markdown"></div> 
+      </div>
+    </div>
+  <% end %>
+</div>

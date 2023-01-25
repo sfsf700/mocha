@@ -1,0 +1,35 @@
+.owner-article-list {
+  width: 70%;
+  padding: 20px;
+  background-color: #FFFFFF;
+}
+
+.profile-card {
+  padding: 20px 0;
+}
+
+.profile {
+  font-size: 28px;
+  border-bottom: 3px solid maroon;
+  width: 80%;
+}
+
+.profile-contents {
+  width: 80%;
+}
+
+.profile-list {
+  font-size: 20px;
+  line-height: 1.5em;
+  letter-spacing: 0.03em;
+  color: black;
+
+}
+
+.profile-description {
+  font-size: 20px;
+  line-height: 1.5em;
+  letter-spacing: 0.03em;
+  color: black;
+  padding-top: 20px;
+}

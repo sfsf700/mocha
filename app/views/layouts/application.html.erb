@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.1/marked.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+
+  <body>
+  <header class='top-page-header'>
+    <div>
+      <%= link_to 'MochaBlog', "/", class: "mocha-title-name" %>
+    </div>
+    <div>
+      <% if flash[:notice] %>
+        <p id="notice">
+          <%= flash[:notice] %>
+        </p>
+      <% end %>
+    </div>
+    <div class="admin-login">
+      <% if user_signed_in? && current_user.admin? %>
+        <li><%= link_to 'New Post', new_admin_blog_path, class: "admin-new-post admin-btn", data: {"turbolinks" => false} %>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "admin-logout admin-btn" %></li>
+      <% end %>
+    </div>
+  </header>
+  <div class="navi__wrap">
+    <ul class="navi__lists">
+      <li class="navi__list"><a>Programing</a>
+        <ul class="dropdown__lists">
+          <li class="dropdown__list"><%= link_to 'Java', '/blogs/genre/2' %></li>
+        </ul>
+      </li>
+      <li class="navi__list"><a>Minecraft</a>
+        <ul class="dropdown__lists">
+          <li class="dropdown__list"><%= link_to 'Modding', '/blogs/genre/3' %></li>
+        </ul>
+      </li>
+      <li class="navi__list"><a>Other</a>
+        <ul class="dropdown__lists">
+          <li class="dropdown__list"><%= link_to 'Twitter', 'https://twitter.com/hi_lite700' %></li>
+          <li class="dropdown__list"><%= link_to 'Site Author', '/owner' %></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+    <%= yield %>
+  <footer class="top-page-footer">
+    <div>
+      <h2>Mocha</h2>
+    </div>
+    <div>
+      <h2>© 2023 MochaBlog</h2>
+    </div>
+  </footer>
+  </body>
+</html>

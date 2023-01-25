@@ -1,0 +1,20 @@
+<div class='blog-contents'>
+  <div class='blog-lists'>
+    <div class='show-article-list'>
+      <div class='show-list'>
+        <div>
+          <%= image_tag @blog.image.variant(resize: '120x120') if @blog.image.attached? %>
+        </div>
+        <div class='show-blog-title'>
+          <h3><%= @blog.title %></h3>
+          <div class='blog-description'><%= @blog.description %></div>
+        </div>
+
+      </div>
+      <div class='blog-markdown-text'>
+        <%= markdown(@blog.text).html_safe %>
+      </div>
+    </div>
+    <%= render "site_right" %>
+  </div>
+</div>
