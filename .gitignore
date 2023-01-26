@@ -30,7 +30,7 @@
 yarn-debug.log*
 .yarn-integrity
 db/seeds.rb
-config/database.yml
+
 config/credentials.yml.enc
 .DS_Store
 /config/storage.yml
