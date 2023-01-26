@@ -60,3 +60,4 @@ gem 'active_hash'
 gem 'redcarpet'
 gem 'rouge'
 gem 'kaminari'
+gem "aws-sdk-s3", require: false
