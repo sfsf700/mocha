@@ -64,4 +64,4 @@ belongs_to :user
 
 ### DemoMovie
 
-https://i.gyazo.com/55a0fd3652e38e074e74a9e7000332a6.mp4
+![gif](https://i.gyazo.com/55a0fd3652e38e074e74a9e7000332a6.gif)
