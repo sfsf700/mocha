@@ -192,8 +192,9 @@ table tr:nth-child(2n) {
   background-color: darkgray;
 }
 
+/* media width 800 以下の時 */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 750px) {
   .blog-owner {
     display: none;
   }
@@ -225,6 +226,18 @@ table tr:nth-child(2n) {
 
   a.mocha-title-name {
     font-size: 36px;
+  }
+
+  .site-right-box {
+    display: none;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .owner-article-list {
+    width: 100%;
   }
 
 }
