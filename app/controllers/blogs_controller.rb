@@ -3,7 +3,8 @@ class BlogsController < ApplicationController
 
   def index
     #@blogs = Blog.page(params[:page]).per(10)
-    @blogs = Blog.order("created_at DESC").params[:page].per(5)
+    @blogs = Blog.all.order(created_at: :desc).page(params[:page]).per(5)
+    #@posts = Post.all.order(id: "desc").page(params[:page]).per(20)
   end
 
   def show
