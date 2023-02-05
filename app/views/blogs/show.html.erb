@@ -8,6 +8,7 @@
         <div class='show-blog-title'>
           <h3><%= @blog.title %></h3>
           <div class='blog-description'><%= @blog.description %></div>
+          <div class='blog-date'><%= @blog.created_at.strftime("投稿日：%Y/%m/%d") %></div>
         </div>
 
       </div>

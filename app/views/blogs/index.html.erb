@@ -11,6 +11,7 @@
             <div class='blog-title'>
               <%= blog.title %>
               <div class='blog-description'><%= blog.description %></div>
+              <div class='blog-date'><%= blog.created_at.strftime("投稿日：%Y/%m/%d") %></div>
             </div>
           <% end %>
           <% if user_signed_in? && current_user.admin? %>
