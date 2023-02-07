@@ -4,6 +4,12 @@
     <title>Mocha</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta property="og:title" content="MochaBlog">
+    <meta property="og:type" content="blog">
+    <meta property="og:description" content="プログラミングの学習内容をアウトプットしていくブログです。">
+    <meta property="og:url" content="http://52.192.233.63/">
+    <meta name="keywords" content="Java,ruby,プログラミング,blog,ブログ">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,6 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/monokai-sublime.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
   </head>
 
@@ -37,7 +45,7 @@
   </header>
   <div class="navi__wrap">
     <ul class="navi__lists">
-      <li class="navi__list"><a>Programing</a>
+      <li class="navi__list"><a>Programming</a>
         <ul class="dropdown__lists">
           <li class="dropdown__list"><%= link_to 'Java', '/blogs/genre/2' %></li>
         </ul>

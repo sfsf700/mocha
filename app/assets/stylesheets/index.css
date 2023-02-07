@@ -261,6 +261,10 @@ table tr:nth-child(2n) {
     bottom: -20px;
   }
 
+  div.social {
+    font-size: 30px;
+  }
+
 }
 
 /* page-nation */
@@ -285,4 +289,21 @@ span.page.current {
 
 .pagination span a:hover{
   color: maroon;
+}
+
+/* share */
+.social {
+  padding-top: 20px;
+  font-size: 40px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: end;
+}
+
+.fa-twitter {
+  color: #1DA1F2;
+}
+
+.fa-line {
+  color: #06c755;
 }
