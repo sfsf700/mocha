@@ -250,7 +250,7 @@ table tr:nth-child(2n) {
     display: none;
   }
 
-  .owner-article-list {
+  div.owner-article-list {
     width: 100%;
   }
 
