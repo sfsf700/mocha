@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head prefix="og:http://ogp.me/ns#">
-    <title>Mocha</title>
+    <title><%= page_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <meta property="og:title" content="MochaBlog">
-    <meta property="og:type" content="blog">
-    <meta property="og:description" content="プログラミング学習やマイクラ(java版)のMOD制作の内容をアウトプットしていくブログです。">
-    <meta property="og:url" content="http://52.192.233.63/">
-    <meta name="keywords" content="Java,minecraft,マイクラ,プログラミング,blog,ブログ">
+    <meta property="og:title" content="MochaBlog" />
+    <meta property="og:type" content="blog"/>
+    <meta property="og:description" content="プログラミング学習やマイクラ(java版)のMOD制作の内容をアウトプットしていくブログです。"/>
+    <meta property="og:url" content="http://52.192.233.63/"/>
+    <meta name="keywords" content="Java,minecraft,マイクラ,プログラミング,blog,ブログ"/>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
