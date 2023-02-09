@@ -2,9 +2,6 @@
   <span class='new-article'>Search Results</span>
   <div class='blog-lists' >
     <div class='article-list'>
-    <% if @blog.blank? %>
-      お探しのページはありませんでした。
-    <% end %>
       <% @blogs.each do |blog| %>
         <div class='list'>
           <%= link_to blog_path(blog.id), class: 'blog-title-img', method: :get do %>
@@ -21,6 +18,9 @@
             <%= link_to 'DELETE', admin_blog_path(blog.id), class: 'admin-only delete', data: { confirm: 'Is it okay if I delete this article?' }, method: :delete %>
           <% end %>
         </div>
+      <% end %>
+      <% if @blogs.blank? %>
+          お探しのページはありませんでした。
       <% end %>
     </div>
     <%= render 'site_right'%>

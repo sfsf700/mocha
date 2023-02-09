@@ -13,7 +13,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
     
     <script src='https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.1/marked.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/monokai-sublime.min.css">
@@ -21,13 +21,12 @@
     <script>hljs.initHighlightingOnLoad();</script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
   </head>
 
   <body>
   <header class='top-page-header'>
     <div>
-      <%= link_to 'MochaBlog', "/", class: "mocha-title-name" %>
+      <%= link_to 'MochaBlog', "/", class: "mocha-title-name", id:"site-title" %>
     </div>
     <div>
       <% if flash[:notice] %>
@@ -41,6 +40,20 @@
         <li><%= link_to 'New Post', new_admin_blog_path, class: "admin-new-post admin-btn", data: {"turbolinks" => false} %>
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "admin-logout admin-btn" %></li>
       <% end %>
+    </div>
+    <div id="nav-wrapper" class="nav-wrapper" >
+      <i class="fa-solid fa-magnifying-glass top-page-search-icon" id="js-gear"></i>
+      <nav class="sp-nav">
+        <i class="fa-regular fa-circle-xmark" id="js-black-bg"></i>
+        <div class="smart-search">
+          <%= form_with url: search_blogs_path, method: :get, class: 'smart-search-form', local: true do |f| %>
+            <%= f.text_field :keyword, placeholder: "キーワード", class: 'search-keyword' %>
+              <label for="seach-bottun" class="icon-label"><i class="fa-solid fa-magnifying-glass in-sp-nav-icon"></i></label>
+              <%= f.submit id: "seach-bottun", class: "btn-hidden" %>
+          <% end %>
+        </div>
+      </nav>
+      <div class="black-bg" id="black-bg-close"></div>
     </div>
   </header>
   <div class="navi__wrap">
